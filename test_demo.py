@@ -1,9 +1,7 @@
 import pytest
 
-
 def add_function(a, b):
     return a + b
-
 
 @pytest.mark.parametrize("a", [0, 1, 5])
 @pytest.mark.parametrize("b", [2, 3, 8])

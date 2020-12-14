@@ -2,7 +2,7 @@ import pytest
 from pythoncode.calculator import Calculator
 
 
-class TestCalc:
+class TestCalc():
     def setup_class(self):
         self.calc = Calculator()
         print("开始计算")
@@ -12,6 +12,9 @@ class TestCalc:
 
     @pytest.mark.parametrize("a,b,expect", [
         (3, 5, 8), (-1, -2, -3), (100, 300, 400)
-    ], ids=["int", "minus", "bigint"])
+    ], ids=["中文int", "minus", "bigint"])
     def test_add(self, a, b, expect):
         assert expect == self.calc.add(a, b)
+
+    def test_div(self):
+        assert 1 == self.calc.div(1, 1)
